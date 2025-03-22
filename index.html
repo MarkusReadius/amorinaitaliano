@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to Amorina - Authentic Italian cuisine in a warm, inviting atmosphere. Experience the taste of Italy with our handcrafted dishes and exceptional service.">
+    <title>Amorina | Authentic Italian Restaurant</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav__logo">
+                <a href="/" class="nav__logo-link">Amorina</a>
+            </div>
+            <button class="nav__toggle" aria-label="Toggle menu">
+                <span class="nav__toggle-bar"></span>
+            </button>
+            <ul class="nav__menu">
+                <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                <li class="nav__item"><a href="#menu" class="nav__link">Menu</a></li>
+                <li class="nav__item"><a href="#reservations" class="nav__link">Reservations</a></li>
+                <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero__content">
+                <h1 class="hero__title">Welcome to Amorina</h1>
+                <p class="hero__subtitle">Experience authentic Italian cuisine</p>
+                <a href="#reservations" class="btn btn--primary">Make a Reservation</a>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title">Our Story</h2>
+                <div class="about__content">
+                    <p class="about__text">At Amorina, we bring the heart of Italy to your table. Our passion for authentic Italian cuisine is reflected in every dish we serve, crafted with love and tradition.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu" class="menu">
+            <div class="container">
+                <h2 class="section-title">Menu</h2>
+                <div class="menu__categories">
+                    <div class="menu__category">
+                        <h3 class="menu__category-title">Antipasti</h3>
+                        <div class="menu__items">
+                            <div class="menu__item">
+                                <h4 class="menu__item-title">Bruschetta al Pomodoro</h4>
+                                <p class="menu__item-description">Grilled bread topped with fresh tomatoes, garlic, basil, and extra virgin olive oil</p>
+                                <span class="menu__item-price">$12</span>
+                            </div>
+                            <div class="menu__item">
+                                <h4 class="menu__item-title">Caprese</h4>
+                                <p class="menu__item-description">Fresh mozzarella, tomatoes, and basil with balsamic glaze</p>
+                                <span class="menu__item-price">$14</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu__category">
+                        <h3 class="menu__category-title">Pasta</h3>
+                        <div class="menu__items">
+                            <div class="menu__item">
+                                <h4 class="menu__item-title">Spaghetti alla Carbonara</h4>
+                                <p class="menu__item-description">Classic Roman pasta with pecorino, eggs, guanciale, and black pepper</p>
+                                <span class="menu__item-price">$22</span>
+                            </div>
+                            <div class="menu__item">
+                                <h4 class="menu__item-title">Pappardelle al Ragù</h4>
+                                <p class="menu__item-description">Wide pasta ribbons with slow-cooked beef ragù</p>
+                                <span class="menu__item-price">$24</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="reservations" class="reservations">
+            <div class="container">
+                <h2 class="section-title">Make a Reservation</h2>
+                <form class="reservation-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required placeholder="Email Address">
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" name="date" required aria-label="Reservation date">
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Time</label>
+                        <input type="time" id="time" name="time" required aria-label="Reservation time">
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">Number of Guests</label>
+                        <select id="guests" name="guests" required aria-label="Select number of guests">
+                            <option value="">Number of Guests</option>
+                            <option value="1">1 Person</option>
+                            <option value="2">2 People</option>
+                            <option value="3">3 People</option>
+                            <option value="4">4 People</option>
+                            <option value="5">5 People</option>
+                            <option value="6">6 People</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn--primary">Reserve Table</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Contact Us</h2>
+                <div class="contact__content">
+                    <div class="contact__info">
+                        <div class="contact__item">
+                            <h3>Location</h3>
+                            <p>123 Italian Street<br>New York, NY 10001</p>
+                        </div>
+                        <div class="contact__item">
+                            <h3>Hours</h3>
+                            <p>Tuesday - Sunday<br>5:00 PM - 10:00 PM</p>
+                        </div>
+                        <div class="contact__item">
+                            <h3>Contact</h3>
+                            <p>Phone: (212) 555-0123<br>Email: info@amorina.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__logo">Amorina</div>
+                <div class="footer__social">
+                    <a href="#" class="social-link" aria-label="Facebook">Facebook</a>
+                    <a href="#" class="social-link" aria-label="Instagram">Instagram</a>
+                    <a href="#" class="social-link" aria-label="Twitter">Twitter</a>
+                </div>
+                <p class="footer__copyright">&copy; 2025 Amorina. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
