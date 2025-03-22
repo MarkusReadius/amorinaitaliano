@@ -1,0 +1,150 @@
+/* Home Page Specific Styles */
+
+/* Featured Menu Section */
+.menu__action {
+    text-align: center;
+    margin-top: var(--spacing-xl);
+}
+
+/* CTA Section */
+.cta-section {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-background-alt);
+}
+
+.cta-grid {
+    display: grid;
+    gap: var(--spacing-xl);
+}
+
+@media (min-width: 768px) {
+    .cta-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.cta-card {
+    background: var(--color-background);
+    padding: var(--spacing-xl);
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.cta-card:hover {
+    transform: translateY(-5px);
+}
+
+.cta-card h3 {
+    color: var(--color-primary);
+    font-size: 1.8rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.cta-card p {
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-lg);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Hero Section Enhancements */
+.hero__tagline {
+    font-family: var(--font-primary);
+    font-style: italic;
+    color: var(--color-accent);
+    font-size: 1.8rem;
+    margin-bottom: var(--spacing-lg);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Featured Menu Enhancements */
+#featured-menu {
+    position: relative;
+    overflow: hidden;
+}
+
+#featured-menu::before {
+    content: '✽';
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--color-accent);
+    font-size: 2rem;
+    opacity: 0.2;
+}
+
+.menu__category {
+    position: relative;
+    overflow: hidden;
+}
+
+.menu__category::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(
+        to right,
+        var(--color-primary),
+        var(--color-accent),
+        var(--color-secondary)
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.menu__category:hover::after {
+    opacity: 1;
+}
+
+/* Button Enhancements */
+.btn--secondary {
+    background-color: transparent;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    transition: all 0.3s ease;
+}
+
+.btn--secondary:hover {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    transform: translateY(-2px);
+}
+
+/* Responsive Enhancements */
+@media (max-width: 767px) {
+    .hero__tagline {
+        font-size: 1.4rem;
+    }
+
+    .cta-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .cta-card p {
+        font-size: 1rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.menu__item,
+.cta-card {
+    animation: fadeInUp 0.6s ease forwards;
+}
