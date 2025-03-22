@@ -398,15 +398,25 @@ h1, h2, h3, h4 {
     color: var(--color-background);
     text-decoration: none;
     transition: all 0.3s ease;
-    padding: var(--spacing-sm);
-    border-radius: 4px;
+    padding: var(--spacing-md);
+    border-radius: 50%;
     background: rgba(255, 255, 255, 0.1);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .social-link:hover {
     color: var(--color-primary);
     background: var(--color-background);
     transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.social-link i {
+    font-size: 1.2rem;
 }
 
 /* Buttons */
