@@ -384,18 +384,29 @@ h1, h2, h3, h4 {
 }
 
 .footer__social {
+    margin-top: var(--spacing-md);
+}
+
+.social-links {
     display: flex;
     gap: var(--spacing-lg);
+    justify-content: center;
+    margin-top: var(--spacing-sm);
 }
 
 .social-link {
     color: var(--color-background);
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    padding: var(--spacing-sm);
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .social-link:hover {
     color: var(--color-primary);
+    background: var(--color-background);
+    transform: translateY(-2px);
 }
 
 /* Buttons */
