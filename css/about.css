@@ -1,0 +1,242 @@
+/* About Page Specific Styles */
+
+.page-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('../assets/images/about-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-background);
+}
+
+.page-hero__content {
+    max-width: 800px;
+    padding: var(--spacing-xl);
+}
+
+.page-hero__title {
+    font-size: 3.5rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-background);
+}
+
+.page-hero__subtitle {
+    font-size: 1.8rem;
+    font-family: var(--font-primary);
+    font-style: italic;
+    color: var(--color-accent);
+}
+
+/* Story Section */
+.story {
+    padding: var(--spacing-xxl) 0;
+}
+
+.story__content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.story__text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Values Section */
+.values {
+    background-color: var(--color-background-alt);
+    padding: var(--spacing-xxl) 0;
+}
+
+.values__grid {
+    display: grid;
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+}
+
+@media (min-width: 768px) {
+    .values__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .values__grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.value-card {
+    background: var(--color-background);
+    padding: var(--spacing-xl);
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+}
+
+.value-card h3 {
+    color: var(--color-primary);
+    font-size: 1.4rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.value-card p {
+    color: var(--color-text-light);
+    line-height: 1.6;
+}
+
+/* Team Section */
+.team {
+    padding: var(--spacing-xxl) 0;
+}
+
+.team__content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.team__text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-text);
+}
+
+.team__text p {
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Philosophy Section */
+.philosophy {
+    background-color: var(--color-background-alt);
+    padding: var(--spacing-xxl) 0;
+}
+
+.philosophy__content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.philosophy__quote {
+    margin-top: var(--spacing-xl);
+}
+
+.philosophy__quote blockquote {
+    font-family: var(--font-primary);
+    font-size: 2rem;
+    font-style: italic;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.4;
+}
+
+.philosophy__quote p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-text);
+}
+
+/* CTA Section */
+.cta-section {
+    padding: var(--spacing-xxl) 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+                url('../assets/images/cta-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--color-background);
+    text-align: center;
+}
+
+.cta-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.cta-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-xl);
+    color: var(--color-text-light);
+}
+
+.cta-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+    .page-hero__title {
+        font-size: 2.5rem;
+    }
+
+    .page-hero__subtitle {
+        font-size: 1.4rem;
+    }
+
+    .philosophy__quote blockquote {
+        font-size: 1.6rem;
+    }
+
+    .cta-content h2 {
+        font-size: 2rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cta-buttons .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.value-card {
+    animation: fadeIn 0.6s ease forwards;
+}
+
+.values__grid {
+    opacity: 0;
+    animation: fadeIn 0.6s ease forwards;
+    animation-delay: 0.3s;
+}
+
+.story__content,
+.team__content,
+.philosophy__content {
+    opacity: 0;
+    animation: fadeIn 0.6s ease forwards;
+}
