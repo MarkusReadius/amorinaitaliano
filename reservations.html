@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Make a reservation at Amorina - Experience authentic Italian-American cuisine in an elegant setting. Book your table for lunch or dinner.">
+    <meta name="description" content="Make a reservation at Amorina Italian Restaurant. Book your table online for lunch or dinner and enjoy authentic Italian cuisine.">
     <title>Reservations | Amorina Italian Restaurant</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/reservations.css">
@@ -15,18 +15,18 @@
     <header class="header">
         <nav class="nav">
             <div class="nav__logo">
-                <a href="/" class="nav__logo-link">Amorina</a>
+                <a href="index.html" class="nav__logo-link">Amorina</a>
             </div>
             <button class="nav__toggle" aria-label="Toggle menu">
                 <span class="nav__toggle-bar"></span>
             </button>
             <ul class="nav__menu">
-                <li class="nav__item"><a href="/" class="nav__link">Home</a></li>
-                <li class="nav__item"><a href="/about.html" class="nav__link">About</a></li>
-                <li class="nav__item"><a href="/menu.html" class="nav__link">Menu</a></li>
-                <li class="nav__item"><a href="/reservations.html" class="nav__link">Reservations</a></li>
-                <li class="nav__item"><a href="/order.html" class="nav__link">Order Online</a></li>
-                <li class="nav__item"><a href="/contact.html" class="nav__link">Contact</a></li>
+                <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+                <li class="nav__item"><a href="menu.html" class="nav__link">Menu</a></li>
+                <li class="nav__item"><a href="reservations.html" class="nav__link">Reservations</a></li>
+                <li class="nav__item"><a href="order.html" class="nav__link">Order Online</a></li>
+                <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -35,123 +35,96 @@
         <section class="page-hero">
             <div class="page-hero__content">
                 <h1 class="page-hero__title">Make a Reservation</h1>
-                <p class="page-hero__subtitle">Join us for an unforgettable dining experience</p>
+                <p class="page-hero__subtitle">Book Your Table</p>
             </div>
         </section>
 
-        <section class="reservation-content">
+        <section class="reservation-info">
             <div class="container">
-                <div class="reservation-grid">
-                    <div class="reservation-form-container">
-                        <h2 class="section-title">Book Your Table</h2>
-                        <form class="reservation-form" id="reservationForm">
-                            <div class="form-group">
-                                <label for="name">Full Name</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email Address</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" name="phone" required>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="date">Date</label>
-                                    <input type="date" id="date" name="date" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="time">Time</label>
-                                    <select id="time" name="time" required>
-                                        <option value="">Select Time</option>
-                                        <option value="11:30">11:30 AM</option>
-                                        <option value="12:00">12:00 PM</option>
-                                        <option value="12:30">12:30 PM</option>
-                                        <option value="13:00">1:00 PM</option>
-                                        <option value="13:30">1:30 PM</option>
-                                        <option value="17:00">5:00 PM</option>
-                                        <option value="17:30">5:30 PM</option>
-                                        <option value="18:00">6:00 PM</option>
-                                        <option value="18:30">6:30 PM</option>
-                                        <option value="19:00">7:00 PM</option>
-                                        <option value="19:30">7:30 PM</option>
-                                        <option value="20:00">8:00 PM</option>
-                                        <option value="20:30">8:30 PM</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="guests">Number of Guests</label>
-                                <select id="guests" name="guests" required>
-                                    <option value="">Select Party Size</option>
-                                    <option value="1">1 Person</option>
-                                    <option value="2">2 People</option>
-                                    <option value="3">3 People</option>
-                                    <option value="4">4 People</option>
-                                    <option value="5">5 People</option>
-                                    <option value="6">6 People</option>
-                                    <option value="7">7 People</option>
-                                    <option value="8">8 People</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="occasion">Special Occasion (Optional)</label>
-                                <select id="occasion" name="occasion">
-                                    <option value="">Select Occasion</option>
-                                    <option value="birthday">Birthday</option>
-                                    <option value="anniversary">Anniversary</option>
-                                    <option value="business">Business Dinner</option>
-                                    <option value="date">Date Night</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="requests">Special Requests (Optional)</label>
-                                <textarea id="requests" name="requests" rows="3"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn--primary">Confirm Reservation</button>
-                        </form>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="info-card__icon">⏰</div>
+                        <h3>Hours</h3>
+                        <p>Lunch: Tue-Sun 11:30am-2:30pm</p>
+                        <p>Dinner: Tue-Sun 5:00pm-10:00pm</p>
+                        <p>Closed Mondays</p>
                     </div>
-
-                    <div class="reservation-info">
-                        <div class="info-card">
-                            <h3>Hours of Operation</h3>
-                            <div class="hours-grid">
-                                <div class="hours-item">
-                                    <h4>Lunch</h4>
-                                    <p>Tuesday - Sunday<br>11:30 AM - 2:30 PM</p>
-                                </div>
-                                <div class="hours-item">
-                                    <h4>Dinner</h4>
-                                    <p>Tuesday - Sunday<br>5:00 PM - 10:00 PM</p>
-                                </div>
-                                <div class="hours-item">
-                                    <h4>Closed</h4>
-                                    <p>Mondays</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="info-card">
-                            <h3>Large Parties</h3>
-                            <p>For parties of 9 or more, please call us directly at (212) 555-0123 or email events@amorina.com</p>
-                        </div>
-
-                        <div class="info-card">
-                            <h3>Private Events</h3>
-                            <p>Our private dining room is perfect for special occasions and business events. Contact our events team for more information.</p>
-                            <a href="/contact.html" class="btn btn--secondary">Inquire About Events</a>
-                        </div>
-
-                        <div class="gallery">
-                            <img src="assets/images/dining-room-1.jpg" alt="Elegant main dining room" class="gallery-img">
-                            <img src="assets/images/private-room.jpg" alt="Private dining space" class="gallery-img">
-                            <img src="assets/images/bar-area.jpg" alt="Sophisticated bar area" class="gallery-img">
-                        </div>
+                    <div class="info-card">
+                        <div class="info-card__icon">👥</div>
+                        <h3>Group Size</h3>
+                        <p>Online reservations available for parties of up to 6 guests</p>
+                        <p>For larger parties, please call us</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card__icon">📞</div>
+                        <h3>Need Help?</h3>
+                        <p>Call us at (212) 555-0123</p>
+                        <p>For special requests or assistance</p>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section class="reservation-form">
+            <div class="container">
+                <h2 class="section-title">Reserve Your Table</h2>
+                <form id="reservationForm" class="form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="date">Date</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="time">Time</label>
+                            <select id="time" name="time" required>
+                                <option value="">Select a time</option>
+                                <!-- Time slots will be populated by JavaScript -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="guests">Number of Guests</label>
+                            <select id="guests" name="guests" required>
+                                <option value="">Select party size</option>
+                                <option value="1">1 person</option>
+                                <option value="2">2 people</option>
+                                <option value="3">3 people</option>
+                                <option value="4">4 people</option>
+                                <option value="5">5 people</option>
+                                <option value="6">6 people</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="occasion">Special Occasion (Optional)</label>
+                            <select id="occasion" name="occasion">
+                                <option value="">Select occasion</option>
+                                <option value="birthday">Birthday</option>
+                                <option value="anniversary">Anniversary</option>
+                                <option value="date">Date Night</option>
+                                <option value="business">Business Dinner</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="requests">Special Requests (Optional)</label>
+                            <textarea id="requests" name="requests" rows="3"></textarea>
+                        </div>
+                        <div class="form-group full-width">
+                            <button type="submit" class="btn btn--primary">Book Table</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </section>
 
@@ -161,15 +134,31 @@
                 <div class="policies-grid">
                     <div class="policy-card">
                         <h3>Confirmation</h3>
-                        <p>Reservations are confirmed via email. Please check your spam folder if you don't receive a confirmation within 15 minutes.</p>
+                        <p>You will receive an email confirmation immediately after booking. Please check your spam folder if you don't see it in your inbox.</p>
                     </div>
                     <div class="policy-card">
                         <h3>Cancellation</h3>
-                        <p>We kindly request 24-hour notice for cancellations. Late cancellations may incur a fee of $25 per person.</p>
+                        <p>We kindly request 24 hours notice for cancellations. You can cancel or modify your reservation through the link in your confirmation email.</p>
                     </div>
                     <div class="policy-card">
                         <h3>Late Arrival</h3>
-                        <p>We hold reservations for 15 minutes past the scheduled time. Please call if you're running late.</p>
+                        <p>We hold reservations for 15 minutes past the scheduled time. Please call us if you're running late.</p>
+                    </div>
+                    <div class="policy-card">
+                        <h3>Large Parties</h3>
+                        <p>For parties of 7 or more, please call us directly to arrange your reservation. Special menus and private dining options are available.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="private-events">
+            <div class="container">
+                <h2 class="section-title">Private Events</h2>
+                <div class="events-content">
+                    <p>Looking to host a special celebration or corporate event? Our private dining room can accommodate up to 40 guests, and we offer customized menus for any occasion.</p>
+                    <div class="events-cta">
+                        <a href="contact.html" class="btn btn--secondary">Inquire About Private Events</a>
                     </div>
                 </div>
             </div>
@@ -208,5 +197,6 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/reservations.js"></script>
 </body>
 </html>

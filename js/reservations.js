@@ -1,167 +1,223 @@
-// Reservation Form Handling
+// Reservations Page Specific JavaScript
 document.addEventListener('DOMContentLoaded', () => {
     const reservationForm = document.getElementById('reservationForm');
-    if (!reservationForm) return;
-
-    // Set minimum date to today
     const dateInput = document.getElementById('date');
-    const today = new Date();
-    const tomorrow = new Date(today);
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    dateInput.min = tomorrow.toISOString().split('T')[0];
-
-    // Set maximum date to 3 months from now
-    const maxDate = new Date(today);
-    maxDate.setMonth(maxDate.getMonth() + 3);
-    dateInput.max = maxDate.toISOString().split('T')[0];
-
-    // Phone number formatting
+    const timeSelect = document.getElementById('time');
     const phoneInput = document.getElementById('phone');
-    phoneInput.addEventListener('input', (e) => {
-        let value = e.target.value.replace(/\D/g, '');
-        if (value.length > 0) {
-            if (value.length <= 3) {
-                value = `(${value}`;
-            } else if (value.length <= 6) {
-                value = `(${value.slice(0, 3)}) ${value.slice(3)}`;
-            } else {
-                value = `(${value.slice(0, 3)}) ${value.slice(3, 6)}-${value.slice(6, 10)}`;
-            }
-        }
-        e.target.value = value;
-    });
 
-    // Form validation and submission
-    reservationForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        // Basic validation
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const phone = document.getElementById('phone').value.trim();
-        const date = document.getElementById('date').value;
-        const time = document.getElementById('time').value;
-        const guests = document.getElementById('guests').value;
-
-        if (!name || !email || !phone || !date || !time || !guests) {
-            showMessage('Please fill in all required fields.', 'error');
-            return;
-        }
-
-        // Email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            showMessage('Please enter a valid email address.', 'error');
-            return;
-        }
-
-        // Phone validation
-        const phoneRegex = /^\(\d{3}\) \d{3}-\d{4}$/;
-        if (!phoneRegex.test(phone)) {
-            showMessage('Please enter a valid phone number.', 'error');
-            return;
-        }
-
-        // Date validation
-        const selectedDate = new Date(date);
-        if (selectedDate < tomorrow) {
-            showMessage('Please select a future date for your reservation.', 'error');
-            return;
-        }
-
-        // Collect form data
-        const formData = {
-            name,
-            email,
-            phone,
-            date,
-            time,
-            guests,
-            occasion: document.getElementById('occasion').value,
-            requests: document.getElementById('requests').value.trim()
-        };
-
-        try {
-            // In a real application, you would send this data to a server
-            console.log('Reservation details:', formData);
-            
-            // Show success message
-            showMessage('Thank you for your reservation! We will send a confirmation email shortly.', 'success');
-            
-            // Clear form
-            reservationForm.reset();
-            
-        } catch (error) {
-            console.error('Error submitting reservation:', error);
-            showMessage('There was an error submitting your reservation. Please try again.', 'error');
-        }
-    });
-});
-
-// Message display function
-function showMessage(message, type = 'success') {
-    // Remove any existing messages
-    const existingMessage = document.querySelector('.form-message');
-    if (existingMessage) {
-        existingMessage.remove();
-    }
-
-    // Create message element
-    const messageElement = document.createElement('div');
-    messageElement.className = `form-message ${type === 'success' ? 'form-success' : 'form-error'}`;
-    messageElement.textContent = message;
-
-    // Add message to form
-    const form = document.getElementById('reservationForm');
-    form.appendChild(messageElement);
-
-    // Scroll message into view
-    messageElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-
-    // Remove message after 5 seconds if it's a success message
-    if (type === 'success') {
-        setTimeout(() => {
-            messageElement.remove();
-        }, 5000);
-    }
-}
-
-// Date and time validation
-function validateDateTime() {
-    const dateInput = document.getElementById('date');
-    const timeInput = document.getElementById('time');
-    
-    if (!dateInput || !timeInput) return;
-
-    const selectedDate = new Date(dateInput.value);
-    const dayOfWeek = selectedDate.getDay();
-
-    // Disable Mondays (0 = Sunday, 1 = Monday)
-    if (dayOfWeek === 1) {
-        showMessage('We are closed on Mondays. Please select another day.', 'error');
-        dateInput.value = '';
-        return false;
-    }
-
-    return true;
-}
-
-// Initialize gallery image loading
-document.addEventListener('DOMContentLoaded', () => {
-    const galleryImages = document.querySelectorAll('.gallery-img');
-    
-    galleryImages.forEach(img => {
-        // Add loading animation
-        img.style.opacity = '0';
-        img.style.transition = 'opacity 0.3s ease';
+    if (reservationForm) {
+        // Set minimum date to today
+        const today = new Date();
+        const maxDate = new Date();
+        maxDate.setMonth(maxDate.getMonth() + 3); // Allow bookings up to 3 months in advance
         
-        img.addEventListener('load', () => {
-            img.style.opacity = '1';
+        dateInput.min = today.toISOString().split('T')[0];
+        dateInput.max = maxDate.toISOString().split('T')[0];
+
+        // Update available time slots when date changes
+        dateInput.addEventListener('change', () => {
+            updateTimeSlots(dateInput.value);
         });
 
-        // Add click handler for larger view (could be expanded to a lightbox)
-        img.addEventListener('click', () => {
-            img.classList.toggle('gallery-img--expanded');
+        // Phone number formatting
+        if (phoneInput) {
+            phoneInput.addEventListener('input', (e) => {
+                let value = e.target.value.replace(/\D/g, '');
+                if (value.length > 0) {
+                    if (value.length <= 3) {
+                        value = `(${value}`;
+                    } else if (value.length <= 6) {
+                        value = `(${value.slice(0, 3)}) ${value.slice(3)}`;
+                    } else {
+                        value = `(${value.slice(0, 3)}) ${value.slice(3, 6)}-${value.slice(6, 10)}`;
+                    }
+                }
+                e.target.value = value;
+            });
+        }
+
+        // Form submission
+        reservationForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            if (!validateForm()) {
+                return;
+            }
+
+            const formData = new FormData(reservationForm);
+            const data = Object.fromEntries(formData);
+
+            try {
+                // Since this is a static site, we'll just show a success message
+                // In a real application, you would send this data to a server
+                console.log('Reservation details:', data);
+
+                // Show success message
+                const successMessage = document.createElement('div');
+                successMessage.className = 'success-message show';
+                successMessage.textContent = 'Thank you for your reservation! A confirmation email will be sent shortly.';
+
+                // Clear form
+                reservationForm.reset();
+
+                // Add success message
+                reservationForm.appendChild(successMessage);
+
+                // Remove success message after 5 seconds
+                setTimeout(() => {
+                    successMessage.remove();
+                }, 5000);
+
+            } catch (error) {
+                console.error('Error submitting reservation:', error);
+                
+                // Show error message
+                const errorMessage = document.createElement('div');
+                errorMessage.className = 'error-message show';
+                errorMessage.textContent = 'There was an error processing your reservation. Please try again later.';
+                
+                reservationForm.appendChild(errorMessage);
+
+                setTimeout(() => {
+                    errorMessage.remove();
+                }, 5000);
+            }
+        });
+    }
+
+    function updateTimeSlots(selectedDate) {
+        const timeSlots = generateTimeSlots(selectedDate);
+        timeSelect.innerHTML = '<option value="">Select a time</option>';
+        
+        timeSlots.forEach(slot => {
+            const option = document.createElement('option');
+            option.value = slot;
+            option.textContent = slot;
+            timeSelect.appendChild(option);
+        });
+    }
+
+    function generateTimeSlots(selectedDate) {
+        const slots = [];
+        const selected = new Date(selectedDate);
+        const today = new Date();
+        const isToday = selected.toDateString() === today.toDateString();
+        const dayOfWeek = selected.getDay();
+
+        // Restaurant is closed on Mondays (day 1)
+        if (dayOfWeek === 1) {
+            const option = document.createElement('option');
+            option.value = "";
+            option.textContent = "Closed on Mondays";
+            option.disabled = true;
+            timeSelect.appendChild(option);
+            return slots;
+        }
+
+        // Lunch service: 11:30 AM - 2:30 PM
+        let lunchStart = new Date(selected.setHours(11, 30, 0));
+        const lunchEnd = new Date(selected.setHours(14, 30, 0));
+
+        // Dinner service: 5:00 PM - 10:00 PM
+        let dinnerStart = new Date(selected.setHours(17, 0, 0));
+        const dinnerEnd = new Date(selected.setHours(22, 0, 0));
+
+        // If booking for today, only show future time slots
+        if (isToday) {
+            const now = new Date();
+            now.setMinutes(now.getMinutes() + 30); // Add 30 minutes buffer
+            if (now > lunchStart) lunchStart = now;
+            if (now > dinnerStart) dinnerStart = now;
+        }
+
+        // Generate lunch slots
+        while (lunchStart < lunchEnd) {
+            slots.push(formatTime(lunchStart));
+            lunchStart.setMinutes(lunchStart.getMinutes() + 30);
+        }
+
+        // Generate dinner slots
+        while (dinnerStart < dinnerEnd) {
+            slots.push(formatTime(dinnerStart));
+            dinnerStart.setMinutes(dinnerStart.getMinutes() + 30);
+        }
+
+        return slots;
+    }
+
+    function formatTime(date) {
+        return date.toLocaleTimeString('en-US', {
+            hour: 'numeric',
+            minute: '2-digit',
+            hour12: true
+        });
+    }
+
+    function validateForm() {
+        let isValid = true;
+        const inputs = reservationForm.querySelectorAll('input, select, textarea');
+        
+        inputs.forEach(input => {
+            if (input.hasAttribute('required') && !input.value) {
+                isValid = false;
+                showError(input, 'This field is required');
+            } else if (input.type === 'email' && input.value && !isValidEmail(input.value)) {
+                isValid = false;
+                showError(input, 'Please enter a valid email address');
+            } else if (input.type === 'tel' && input.value && !isValidPhone(input.value)) {
+                isValid = false;
+                showError(input, 'Please enter a valid phone number');
+            }
+        });
+
+        return isValid;
+    }
+
+    function showError(input, message) {
+        const formGroup = input.closest('.form-group');
+        let errorDiv = formGroup.querySelector('.input-error');
+        
+        if (!errorDiv) {
+            errorDiv = document.createElement('div');
+            errorDiv.className = 'input-error';
+            formGroup.appendChild(errorDiv);
+        }
+        
+        errorDiv.textContent = message;
+        input.classList.add('invalid');
+    }
+
+    function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function isValidPhone(phone) {
+        return /^\(\d{3}\) \d{3}-\d{4}$/.test(phone);
+    }
+
+    // Info Card Hover Effects
+    const infoCards = document.querySelectorAll('.info-card');
+    infoCards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-5px)';
+            card.style.transition = 'transform 0.3s ease';
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0)';
+        });
+    });
+
+    // Policy Card Hover Effects
+    const policyCards = document.querySelectorAll('.policy-card');
+    policyCards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-5px)';
+            card.style.transition = 'transform 0.3s ease';
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0)';
         });
     });
 });
