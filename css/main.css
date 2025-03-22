@@ -122,7 +122,7 @@ h1, h2, h3, h4 {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../assets/images/hero-bg.jpg');
+    background: linear-gradient(45deg, var(--color-primary-dark), var(--color-primary));
     background-size: cover;
     background-position: center;
     display: flex;

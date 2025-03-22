@@ -34,3 +34,6 @@ build/
 
 # Cache
 .cache/
+
+# Cline documentation
+cline_docs/
