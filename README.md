@@ -1,6 +1,6 @@
-# Amorina Italian Restaurant Website
+# Amorina Ristorante Italiano Website
 
-A modern, responsive website for Amorina, an authentic Italian restaurant in New York City. The website is built with HTML, CSS, and JavaScript, featuring an elegant design that reflects the restaurant's commitment to quality and tradition.
+A modern, responsive website for Amorina Ristorante Italiano, an authentic Italian restaurant opening in April 2025 in Marlboro, NJ. The website is built with HTML, CSS, and JavaScript, featuring an elegant design that reflects the restaurant's commitment to quality and tradition.
 
 ## Features
 
@@ -185,10 +185,10 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Contact
 
-For questions or support, please contact [Your Contact Information].
+For questions or support, please contact colleen@amorinaitalian.com.
 
 ## Acknowledgments
 
-- Icons from [Source]
-- Fonts from Google Fonts
-- Images from [Source]
+- Icons from Font Awesome
+- Fonts from Google Fonts (Playfair Display and Raleway)
+- Website designed for Amorina Ristorante Italiano, opening April 2025 in Marlboro, NJ
