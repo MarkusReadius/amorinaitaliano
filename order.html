@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Order online from Amorina - Authentic Italian-American cuisine delivered to your door or ready for pickup. Fresh, delicious, and convenient.">
+    <title>Order Online | Amorina Italian Restaurant</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/order.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav__logo">
+                <a href="/" class="nav__logo-link">Amorina</a>
+            </div>
+            <button class="nav__toggle" aria-label="Toggle menu">
+                <span class="nav__toggle-bar"></span>
+            </button>
+            <ul class="nav__menu">
+                <li class="nav__item"><a href="/" class="nav__link">Home</a></li>
+                <li class="nav__item"><a href="/about.html" class="nav__link">About</a></li>
+                <li class="nav__item"><a href="/menu.html" class="nav__link">Menu</a></li>
+                <li class="nav__item"><a href="/reservations.html" class="nav__link">Reservations</a></li>
+                <li class="nav__item"><a href="/order.html" class="nav__link">Order Online</a></li>
+                <li class="nav__item"><a href="/contact.html" class="nav__link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="page-hero__content">
+                <h1 class="page-hero__title">Order Online</h1>
+                <p class="page-hero__subtitle">Authentic Italian cuisine, delivered to your door</p>
+            </div>
+        </section>
+
+        <section class="order-options">
+            <div class="container">
+                <div class="order-type">
+                    <button class="order-type__btn active" data-type="delivery">Delivery</button>
+                    <button class="order-type__btn" data-type="pickup">Pickup</button>
+                </div>
+
+                <div class="delivery-form" id="deliveryForm">
+                    <h2 class="section-title">Delivery Information</h2>
+                    <form class="address-form">
+                        <div class="form-group">
+                            <label for="street">Street Address</label>
+                            <input type="text" id="street" name="street" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="apt">Apt/Suite (Optional)</label>
+                                <input type="text" id="apt" name="apt">
+                            </div>
+                            <div class="form-group">
+                                <label for="zipcode">ZIP Code</label>
+                                <input type="text" id="zipcode" name="zipcode" required pattern="[0-9]{5}">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn--primary">Check Delivery Area</button>
+                    </form>
+                </div>
+
+                <div class="pickup-form hidden" id="pickupForm">
+                    <h2 class="section-title">Pickup Information</h2>
+                    <div class="pickup-details">
+                        <div class="pickup-location">
+                            <h3>Restaurant Location</h3>
+                            <p>123 Italian Street</p>
+                            <p>New York, NY 10001</p>
+                            <p>(212) 555-0123</p>
+                        </div>
+                        <div class="pickup-time">
+                            <h3>Select Pickup Time</h3>
+                            <select id="pickupTime" name="pickupTime" required aria-label="Select pickup time">
+                                <option value="">Choose a time</option>
+                                <!-- Times will be populated by JavaScript -->
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="menu-ordering">
+            <div class="container">
+                <h2 class="section-title">Select Your Items</h2>
+                
+                <div class="menu-categories">
+                    <button class="category-btn active" data-category="popular">Most Popular</button>
+                    <button class="category-btn" data-category="antipasti">Antipasti</button>
+                    <button class="category-btn" data-category="pasta">Pasta</button>
+                    <button class="category-btn" data-category="pizza">Pizza</button>
+                    <button class="category-btn" data-category="entrees">Main Courses</button>
+                    <button class="category-btn" data-category="sides">Sides</button>
+                    <button class="category-btn" data-category="desserts">Desserts</button>
+                    <button class="category-btn" data-category="drinks">Beverages</button>
+                </div>
+
+                <div class="menu-items" id="menuItems">
+                    <!-- Menu items will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <section class="cart-section">
+            <div class="container">
+                <div class="cart">
+                    <h2>Your Order</h2>
+                    <div class="cart-items" id="cartItems">
+                        <!-- Cart items will be populated by JavaScript -->
+                    </div>
+                    <div class="cart-summary">
+                        <div class="cart-row">
+                            <span>Subtotal</span>
+                            <span id="subtotal">$0.00</span>
+                        </div>
+                        <div class="cart-row">
+                            <span>Tax</span>
+                            <span id="tax">$0.00</span>
+                        </div>
+                        <div class="cart-row" id="deliveryFeeRow">
+                            <span>Delivery Fee</span>
+                            <span id="deliveryFee">$5.00</span>
+                        </div>
+                        <div class="cart-row total">
+                            <span>Total</span>
+                            <span id="total">$0.00</span>
+                        </div>
+                    </div>
+                    <button class="btn btn--primary btn--large" id="checkoutBtn">Proceed to Checkout</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="order-info">
+            <div class="container">
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>Delivery Information</h3>
+                        <ul>
+                            <li>Minimum order: $20</li>
+                            <li>Delivery radius: 5 miles</li>
+                            <li>Average delivery time: 30-45 minutes</li>
+                            <li>Free delivery on orders over $50</li>
+                        </ul>
+                    </div>
+                    <div class="info-card">
+                        <h3>Pickup Information</h3>
+                        <ul>
+                            <li>No minimum order</li>
+                            <li>Ready in 20-30 minutes</li>
+                            <li>Curbside pickup available</li>
+                            <li>10% off on pickup orders over $50</li>
+                        </ul>
+                    </div>
+                    <div class="info-card">
+                        <h3>Dietary Options</h3>
+                        <ul>
+                            <li>Gluten-free options available</li>
+                            <li>Vegetarian options</li>
+                            <li>Please note allergies in special instructions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__logo">Amorina</div>
+                <div class="footer__info">
+                    <div class="footer__hours">
+                        <h3>Hours</h3>
+                        <p>Lunch: Tue-Sun 11:30am-2:30pm</p>
+                        <p>Dinner: Tue-Sun 5:00pm-10:00pm</p>
+                        <p>Closed Mondays</p>
+                    </div>
+                    <div class="footer__contact">
+                        <h3>Contact</h3>
+                        <p>123 Italian Street</p>
+                        <p>New York, NY 10001</p>
+                        <p>(212) 555-0123</p>
+                    </div>
+                    <div class="footer__social">
+                        <h3>Follow Us</h3>
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="Facebook">Facebook</a>
+                            <a href="#" class="social-link" aria-label="Instagram">Instagram</a>
+                            <a href="#" class="social-link" aria-label="Twitter">Twitter</a>
+                        </div>
+                    </div>
+                </div>
+                <p class="footer__copyright">&copy; 2025 Amorina. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/order.js"></script>
+</body>
+</html>

@@ -94,3 +94,57 @@ window.addEventListener('scroll', () => {
 
     lastScroll = currentScroll;
 });
+
+// Menu Navigation
+const menuNavButtons = document.querySelectorAll('.menu-nav__btn');
+const menuSections = document.querySelectorAll('.menu-section');
+
+function showMenuSection(categoryId) {
+    // Hide all sections
+    menuSections.forEach(section => {
+        section.classList.remove('active');
+    });
+
+    // Show selected section
+    const activeSection = document.getElementById(categoryId);
+    if (activeSection) {
+        activeSection.classList.add('active');
+    }
+
+    // Update button states
+    menuNavButtons.forEach(button => {
+        if (button.dataset.category === categoryId) {
+            button.classList.add('active');
+        } else {
+            button.classList.remove('active');
+        }
+    });
+}
+
+// Add click handlers to menu navigation buttons
+menuNavButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const category = button.dataset.category;
+        showMenuSection(category);
+    });
+});
+
+// Initialize menu with first category
+if (menuNavButtons.length > 0 && window.location.pathname.includes('menu.html')) {
+    const firstCategory = menuNavButtons[0].dataset.category;
+    showMenuSection(firstCategory);
+}
+
+// Enhance menu items with hover effects
+const menuItems = document.querySelectorAll('.menu-item');
+menuItems.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+        item.style.transform = 'translateY(-5px)';
+        item.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+    });
+
+    item.addEventListener('mouseleave', () => {
+        item.style.transform = 'translateY(0)';
+        item.style.boxShadow = 'none';
+    });
+});

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore our exquisite menu featuring authentic Italian-American cuisine. From classic pasta dishes to contemporary interpretations of traditional favorites.">
+    <title>Menu | Amorina Italian Restaurant</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav__logo">
+                <a href="/" class="nav__logo-link">Amorina</a>
+            </div>
+            <button class="nav__toggle" aria-label="Toggle menu">
+                <span class="nav__toggle-bar"></span>
+            </button>
+            <ul class="nav__menu">
+                <li class="nav__item"><a href="/" class="nav__link">Home</a></li>
+                <li class="nav__item"><a href="/about.html" class="nav__link">About</a></li>
+                <li class="nav__item"><a href="/menu.html" class="nav__link">Menu</a></li>
+                <li class="nav__item"><a href="/reservations.html" class="nav__link">Reservations</a></li>
+                <li class="nav__item"><a href="/order.html" class="nav__link">Order Online</a></li>
+                <li class="nav__item"><a href="/contact.html" class="nav__link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="page-hero__content">
+                <h1 class="page-hero__title">Our Menu</h1>
+                <p class="page-hero__subtitle">A Taste of Two Worlds</p>
+            </div>
+        </section>
+
+        <section class="menu-content">
+            <div class="container">
+                <div class="menu-nav">
+                    <button class="menu-nav__btn active" data-category="antipasti">Antipasti</button>
+                    <button class="menu-nav__btn" data-category="pasta">Pasta</button>
+                    <button class="menu-nav__btn" data-category="secondi">Main Courses</button>
+                    <button class="menu-nav__btn" data-category="pizze">Pizza</button>
+                    <button class="menu-nav__btn" data-category="dolci">Desserts</button>
+                    <button class="menu-nav__btn" data-category="beverages">Beverages</button>
+                </div>
+
+                <div class="menu-section active" id="antipasti">
+                    <h2 class="section-title">Antipasti</h2>
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <div class="menu-item__header">
+                                <h3>Arancini Siciliani</h3>
+                                <span class="menu-item__price">$14</span>
+                            </div>
+                            <p class="menu-item__description">Golden-fried risotto balls stuffed with mozzarella, peas, and beef ragù, served with San Marzano tomato sauce</p>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item__header">
+                                <h3>Burrata Caprese</h3>
+                                <span class="menu-item__price">$16</span>
+                            </div>
+                            <p class="menu-item__description">Creamy burrata cheese, heirloom tomatoes, fresh basil, aged balsamic reduction, and extra virgin olive oil</p>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item__header">
+                                <h3>Calamari Fritti</h3>
+                                <span class="menu-item__price">$15</span>
+                            </div>
+                            <p class="menu-item__description">Rhode Island calamari lightly fried, served with spicy marinara and lemon aioli</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-section" id="pasta">
+                    <h2 class="section-title">Pasta</h2>
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <div class="menu-item__header">
+                                <h3>Sunday Gravy</h3>
+                                <span class="menu-item__price">$28</span>
+                            </div>
+                            <p class="menu-item__description">Rigatoni with slow-cooked tomato sauce, meatballs, Italian sausage, and braised pork, topped with ricotta</p>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item__header">
+                                <h3>Lobster Fra Diavolo</h3>
+                                <span class="menu-item__price">$34</span>
+                            </div>
+                            <p class="menu-item__description">Linguine with Maine lobster, spicy San Marzano tomato sauce, fresh herbs, and Calabrian chilies</p>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item__header">
+                                <h3>Truffle Fettuccine</h3>
+                                <span class="menu-item__price">$32</span>
+                            </div>
+                            <p class="menu-item__description">House-made fettuccine with black truffle cream sauce, wild mushrooms, and Parmigiano-Reggiano</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-section" id="secondi">
+                    <h2 class="section-title">Main Courses</h2>
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <div class="menu-item__header">
+                                <h3>Veal Chop Parmigiana</h3>
+                                <span class="menu-item__price">$42</span>
+                            </div>
+                            <p class="menu-item__description">Bone-in veal chop, San Marzano tomato sauce, fresh mozzarella, served with roasted vegetables</p>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item__header">
+                                <h3>Branzino al Forno</h3>
+                                <span class="menu-item__price">$38</span>
+                            </div>
+                            <p class="menu-item__description">Whole roasted Mediterranean sea bass, herb-lemon sauce, fingerling potatoes, and grilled asparagus</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-section" id="pizze">
+                    <h2 class="section-title">Pizza</h2>
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <div class="menu-item__header">
+                                <h3>Margherita D.O.P.</h3>
+                                <span class="menu-item__price">$22</span>
+                            </div>
+                            <p class="menu-item__description">San Marzano tomatoes, buffalo mozzarella, fresh basil, extra virgin olive oil</p>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item__header">
+                                <h3>Bronx Special</h3>
+                                <span class="menu-item__price">$26</span>
+                            </div>
+                            <p class="menu-item__description">Italian sausage, pepperoni, bell peppers, caramelized onions, fresh mozzarella</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-section" id="dolci">
+                    <h2 class="section-title">Desserts</h2>
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <div class="menu-item__header">
+                                <h3>Tiramisu</h3>
+                                <span class="menu-item__price">$12</span>
+                            </div>
+                            <p class="menu-item__description">Traditional recipe with mascarpone, espresso-soaked ladyfingers, and cocoa</p>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item__header">
+                                <h3>New York-Style Cannoli</h3>
+                                <span class="menu-item__price">$10</span>
+                            </div>
+                            <p class="menu-item__description">Crispy shells filled with sweet ricotta cream, chocolate chips, and pistachios</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-section" id="beverages">
+                    <h2 class="section-title">Beverages</h2>
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <div class="menu-item__header">
+                                <h3>Italian Wines</h3>
+                                <span class="menu-item__price">By Glass/Bottle</span>
+                            </div>
+                            <p class="menu-item__description">Extensive selection of regional Italian wines. Ask your server for our wine list.</p>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item__header">
+                                <h3>Craft Cocktails</h3>
+                                <span class="menu-item__price">$14-18</span>
+                            </div>
+                            <p class="menu-item__description">Classic Italian cocktails with a modern twist. See our cocktail menu for details.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="menu-footer">
+            <div class="container">
+                <p class="menu-note">*Consuming raw or undercooked meats, poultry, seafood, shellfish, or eggs may increase your risk of foodborne illness.</p>
+                <p class="menu-note">Please inform your server of any allergies or dietary restrictions.</p>
+                <a href="/order.html" class="btn btn--primary">Order Online</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__logo">Amorina</div>
+                <div class="footer__info">
+                    <div class="footer__hours">
+                        <h3>Hours</h3>
+                        <p>Lunch: Tue-Sun 11:30am-2:30pm</p>
+                        <p>Dinner: Tue-Sun 5:00pm-10:00pm</p>
+                        <p>Closed Mondays</p>
+                    </div>
+                    <div class="footer__contact">
+                        <h3>Contact</h3>
+                        <p>123 Italian Street</p>
+                        <p>New York, NY 10001</p>
+                        <p>(212) 555-0123</p>
+                    </div>
+                    <div class="footer__social">
+                        <h3>Follow Us</h3>
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="Facebook">Facebook</a>
+                            <a href="#" class="social-link" aria-label="Instagram">Instagram</a>
+                            <a href="#" class="social-link" aria-label="Twitter">Twitter</a>
+                        </div>
+                    </div>
+                </div>
+                <p class="footer__copyright">&copy; 2025 Amorina. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

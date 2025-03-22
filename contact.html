@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Amorina Italian Restaurant - Get in touch with us for reservations, private events, or general inquiries. Located in the heart of New York City.">
+    <title>Contact Us | Amorina Italian Restaurant</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav__logo">
+                <a href="/" class="nav__logo-link">Amorina</a>
+            </div>
+            <button class="nav__toggle" aria-label="Toggle menu">
+                <span class="nav__toggle-bar"></span>
+            </button>
+            <ul class="nav__menu">
+                <li class="nav__item"><a href="/" class="nav__link">Home</a></li>
+                <li class="nav__item"><a href="/about.html" class="nav__link">About</a></li>
+                <li class="nav__item"><a href="/menu.html" class="nav__link">Menu</a></li>
+                <li class="nav__item"><a href="/reservations.html" class="nav__link">Reservations</a></li>
+                <li class="nav__item"><a href="/order.html" class="nav__link">Order Online</a></li>
+                <li class="nav__item"><a href="/contact.html" class="nav__link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="page-hero__content">
+                <h1 class="page-hero__title">Contact Us</h1>
+                <p class="page-hero__subtitle">We'd love to hear from you</p>
+            </div>
+        </section>
+
+        <section class="contact-content">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="info-card">
+                            <h2>Visit Us</h2>
+                            <address>
+                                <p>123 Italian Street</p>
+                                <p>New York, NY 10001</p>
+                                <p>United States</p>
+                            </address>
+                            <div class="contact-details">
+                                <p><strong>Phone:</strong> <a href="tel:+12125550123">(212) 555-0123</a></p>
+                                <p><strong>Email:</strong> <a href="mailto:info@amorina.com">info@amorina.com</a></p>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <h2>Hours of Operation</h2>
+                            <div class="hours-grid">
+                                <div class="hours-item">
+                                    <h3>Lunch Service</h3>
+                                    <p>Tuesday - Sunday</p>
+                                    <p>11:30 AM - 2:30 PM</p>
+                                </div>
+                                <div class="hours-item">
+                                    <h3>Dinner Service</h3>
+                                    <p>Tuesday - Sunday</p>
+                                    <p>5:00 PM - 10:00 PM</p>
+                                </div>
+                                <div class="hours-item">
+                                    <h3>Closed</h3>
+                                    <p>Mondays</p>
+                                    <p>Major Holidays</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <h2>Quick Links</h2>
+                            <div class="quick-links">
+                                <a href="/reservations.html" class="btn btn--secondary">Make a Reservation</a>
+                                <a href="/order.html" class="btn btn--secondary">Order Online</a>
+                                <a href="/menu.html" class="btn btn--secondary">View Menu</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-container">
+                        <h2>Send Us a Message</h2>
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Select a subject</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="private-events">Private Events</option>
+                                    <option value="feedback">Feedback</option>
+                                    <option value="careers">Careers</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn--primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="location">
+            <div class="container">
+                <h2 class="section-title">Find Us</h2>
+                <div class="location-content">
+                    <div class="map-container">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1!2d-73.9!3d40.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM40zMDA!5e0!3m2!1sen!2sus!4v1"
+                            width="100%"
+                            height="450"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    <div class="location-info">
+                        <div class="info-card">
+                            <h3>Getting Here</h3>
+                            <div class="transport-options">
+                                <div class="transport-item">
+                                    <h4>By Subway</h4>
+                                    <p>N, R, W to 28th St<br>6 to 28th St</p>
+                                </div>
+                                <div class="transport-item">
+                                    <h4>By Bus</h4>
+                                    <p>M1, M2, M3 buses<br>Stop at 28th St</p>
+                                </div>
+                                <div class="transport-item">
+                                    <h4>Parking</h4>
+                                    <p>Street parking available<br>Parking garage at 26th St</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="private-events">
+            <div class="container">
+                <div class="events-content">
+                    <h2>Private Events</h2>
+                    <p>Host your next special occasion at Amorina. Our private dining room can accommodate up to 40 guests for a seated dinner or 60 for a standing reception.</p>
+                    <a href="mailto:events@amorina.com" class="btn btn--primary">Inquire About Events</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__logo">Amorina</div>
+                <div class="footer__info">
+                    <div class="footer__hours">
+                        <h3>Hours</h3>
+                        <p>Lunch: Tue-Sun 11:30am-2:30pm</p>
+                        <p>Dinner: Tue-Sun 5:00pm-10:00pm</p>
+                        <p>Closed Mondays</p>
+                    </div>
+                    <div class="footer__contact">
+                        <h3>Contact</h3>
+                        <p>123 Italian Street</p>
+                        <p>New York, NY 10001</p>
+                        <p>(212) 555-0123</p>
+                    </div>
+                    <div class="footer__social">
+                        <h3>Follow Us</h3>
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="Facebook">Facebook</a>
+                            <a href="#" class="social-link" aria-label="Instagram">Instagram</a>
+                            <a href="#" class="social-link" aria-label="Twitter">Twitter</a>
+                        </div>
+                    </div>
+                </div>
+                <p class="footer__copyright">&copy; 2025 Amorina. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html>
