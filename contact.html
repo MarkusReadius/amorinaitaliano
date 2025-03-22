@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact Amorina Italian Restaurant - Get in touch with us for reservations, private events, or general inquiries. Located in the heart of New York City.">
+    <meta name="description" content="Contact Amorina Italian Restaurant for reservations, private events, or general inquiries. Located in the heart of New York City.">
     <title>Contact Us | Amorina Italian Restaurant</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/contact.css">
@@ -15,18 +15,18 @@
     <header class="header">
         <nav class="nav">
             <div class="nav__logo">
-                <a href="/" class="nav__logo-link">Amorina</a>
+                <a href="index.html" class="nav__logo-link">Amorina</a>
             </div>
             <button class="nav__toggle" aria-label="Toggle menu">
                 <span class="nav__toggle-bar"></span>
             </button>
             <ul class="nav__menu">
-                <li class="nav__item"><a href="/" class="nav__link">Home</a></li>
-                <li class="nav__item"><a href="/about.html" class="nav__link">About</a></li>
-                <li class="nav__item"><a href="/menu.html" class="nav__link">Menu</a></li>
-                <li class="nav__item"><a href="/reservations.html" class="nav__link">Reservations</a></li>
-                <li class="nav__item"><a href="/order.html" class="nav__link">Order Online</a></li>
-                <li class="nav__item"><a href="/contact.html" class="nav__link">Contact</a></li>
+                <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+                <li class="nav__item"><a href="menu.html" class="nav__link">Menu</a></li>
+                <li class="nav__item"><a href="reservations.html" class="nav__link">Reservations</a></li>
+                <li class="nav__item"><a href="order.html" class="nav__link">Order Online</a></li>
+                <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -35,139 +35,115 @@
         <section class="page-hero">
             <div class="page-hero__content">
                 <h1 class="page-hero__title">Contact Us</h1>
-                <p class="page-hero__subtitle">We'd love to hear from you</p>
+                <p class="page-hero__subtitle">We'd Love to Hear from You</p>
             </div>
         </section>
 
-        <section class="contact-content">
+        <section class="contact-info">
             <div class="container">
-                <div class="contact-grid">
-                    <div class="contact-info">
-                        <div class="info-card">
-                            <h2>Visit Us</h2>
-                            <address>
-                                <p>123 Italian Street</p>
-                                <p>New York, NY 10001</p>
-                                <p>United States</p>
-                            </address>
-                            <div class="contact-details">
-                                <p><strong>Phone:</strong> <a href="tel:+12125550123">(212) 555-0123</a></p>
-                                <p><strong>Email:</strong> <a href="mailto:info@amorina.com">info@amorina.com</a></p>
-                            </div>
-                        </div>
-
-                        <div class="info-card">
-                            <h2>Hours of Operation</h2>
-                            <div class="hours-grid">
-                                <div class="hours-item">
-                                    <h3>Lunch Service</h3>
-                                    <p>Tuesday - Sunday</p>
-                                    <p>11:30 AM - 2:30 PM</p>
-                                </div>
-                                <div class="hours-item">
-                                    <h3>Dinner Service</h3>
-                                    <p>Tuesday - Sunday</p>
-                                    <p>5:00 PM - 10:00 PM</p>
-                                </div>
-                                <div class="hours-item">
-                                    <h3>Closed</h3>
-                                    <p>Mondays</p>
-                                    <p>Major Holidays</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="info-card">
-                            <h2>Quick Links</h2>
-                            <div class="quick-links">
-                                <a href="/reservations.html" class="btn btn--secondary">Make a Reservation</a>
-                                <a href="/order.html" class="btn btn--secondary">Order Online</a>
-                                <a href="/menu.html" class="btn btn--secondary">View Menu</a>
-                            </div>
-                        </div>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="info-card__icon">📍</div>
+                        <h3>Location</h3>
+                        <p>123 Italian Street</p>
+                        <p>New York, NY 10001</p>
+                        <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">Get Directions</a>
                     </div>
-
-                    <div class="contact-form-container">
-                        <h2>Send Us a Message</h2>
-                        <form class="contact-form" id="contactForm">
-                            <div class="form-group">
-                                <label for="name">Full Name</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email Address</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" name="phone" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="subject">Subject</label>
-                                <select id="subject" name="subject" required>
-                                    <option value="">Select a subject</option>
-                                    <option value="general">General Inquiry</option>
-                                    <option value="private-events">Private Events</option>
-                                    <option value="feedback">Feedback</option>
-                                    <option value="careers">Careers</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" rows="5" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn--primary">Send Message</button>
-                        </form>
+                    <div class="info-card">
+                        <div class="info-card__icon">📞</div>
+                        <h3>Phone</h3>
+                        <p>(212) 555-0123</p>
+                        <p>For reservations and inquiries</p>
+                        <a href="tel:+12125550123" class="btn btn--secondary">Call Now</a>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card__icon">⏰</div>
+                        <h3>Hours</h3>
+                        <p>Lunch: Tue-Sun 11:30am-2:30pm</p>
+                        <p>Dinner: Tue-Sun 5:00pm-10:00pm</p>
+                        <p>Closed Mondays</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="location">
+        <section class="contact-form">
+            <div class="container">
+                <h2 class="section-title">Send Us a Message</h2>
+                <form id="contactForm" class="form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone (Optional)</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="reservation">Reservation Question</option>
+                                <option value="private-event">Private Event</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <div class="form-group full-width">
+                            <button type="submit" class="btn btn--primary">Send Message</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="map-section">
             <div class="container">
                 <h2 class="section-title">Find Us</h2>
-                <div class="location-content">
-                    <div class="map-container">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1!2d-73.9!3d40.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM40zMDA!5e0!3m2!1sen!2sus!4v1"
-                            width="100%"
-                            height="450"
-                            style="border:0;"
-                            allowfullscreen=""
-                            loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                    </div>
-                    <div class="location-info">
-                        <div class="info-card">
-                            <h3>Getting Here</h3>
-                            <div class="transport-options">
-                                <div class="transport-item">
-                                    <h4>By Subway</h4>
-                                    <p>N, R, W to 28th St<br>6 to 28th St</p>
-                                </div>
-                                <div class="transport-item">
-                                    <h4>By Bus</h4>
-                                    <p>M1, M2, M3 buses<br>Stop at 28th St</p>
-                                </div>
-                                <div class="transport-item">
-                                    <h4>Parking</h4>
-                                    <p>Street parking available<br>Parking garage at 26th St</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1!2d-73.9!3d40.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM40zMCcwMC4wIk4gNzPCsDU0JzAwLjAiVw!5e0!3m2!1sen!2sus!4v1234567890"
+                        width="100%"
+                        height="450"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
                 </div>
             </div>
         </section>
 
-        <section class="private-events">
+        <section class="faq">
             <div class="container">
-                <div class="events-content">
-                    <h2>Private Events</h2>
-                    <p>Host your next special occasion at Amorina. Our private dining room can accommodate up to 40 guests for a seated dinner or 60 for a standing reception.</p>
-                    <a href="mailto:events@amorina.com" class="btn btn--primary">Inquire About Events</a>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>Do you take reservations?</h3>
+                        <p>Yes, we highly recommend making a reservation, especially for dinner service. You can book online through our reservations page or call us directly.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Do you accommodate dietary restrictions?</h3>
+                        <p>Yes, we offer various vegetarian options and can accommodate most dietary restrictions. Please inform your server of any allergies or restrictions.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Do you host private events?</h3>
+                        <p>Yes, we have a private dining room available for special events. Please contact us for more information about private dining options and pricing.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Is parking available?</h3>
+                        <p>Street parking is available, and there are several parking garages within walking distance. We also offer valet parking during dinner service.</p>
+                    </div>
                 </div>
             </div>
         </section>
